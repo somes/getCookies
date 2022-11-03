@@ -13,8 +13,7 @@ var port = conf.SERVER.SERVER_PORT
 func main() {
 	gin.SetMode(gin.ReleaseMode)
 	//gin.DefaultWriter = ioutil.Discard
-	r := gin.Default()
-	r = router.CollectRoute(r)
+	r := router.CollectRoute()
 	if len(port) != 0 {
 		panic(r.Run(":" + port))
 	}
